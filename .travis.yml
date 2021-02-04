@@ -1,0 +1,25 @@
+language: node_js
+
+node_js: 
+  - 11
+
+install:
+  - npm install -g hexo-cli
+
+before_script:
+  - cd ./source/blog
+  - npm install
+
+
+script:
+  - hexo clean
+  - hexo generate
+
+after_script:
+  - cd ./public
+  - echo 'hello world'
+  - tree ./source/blog
+
+branches:
+  only:
+    - dev
