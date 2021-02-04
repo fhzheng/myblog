@@ -1,3 +1,6 @@
+env:
+  global:
+    - LANG=zh_CN.UTF-8
 language: node_js
 
 node_js: 
@@ -23,3 +26,4 @@ after_script:
 branches:
   only:
     - dev
+    - master

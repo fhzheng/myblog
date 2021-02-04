@@ -1,0 +1,17 @@
+#!/bin/bash
+ans=`git diff --cached --name-status|awk -F ' ' '{print $NF}'`
+hasTarget=0
+regex="^source/.*$"
+for an in $ans
+do
+    if [[ $an =~ $regex ]]
+    then
+        echo $an
+        hasTarget=1
+    fi
+done
+
+if [[ $hasTarget == 1 ]]
+then echo "has target"
+fi
+exit 0
