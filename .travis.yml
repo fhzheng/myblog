@@ -1,28 +1,25 @@
 env:
   global:
     - LANG=zh_CN.UTF-8
+    - secure: WMN5T/snYcH21fuDn5/Vf8p9+yHIkeWKWCkUR0zmsZ4F9DGGD/2s8ppctZMDtdN9NzAt8AIC0UNyWViPt/Wi1qomPk+K/PowtN7HBM+XArNiECiyfADa267udhiB0uIilNFAnUM4JU4UI3eb6s0u2jduwB9S1ysyAFgnIw28gfVb60INcSyXoH3k2vhYx/w7ooXmjkPJEDviZGq3SAYojCxwO69t3TDPV9DE0uBHAw7EYg6oPVp7YKLqtmikCdfYiWdDAwrnqN1nhx2WmrlqidRe5yIBfBtq+02AI0V04hK2F23AU+mZxKBU61i2MCJsnwWN1xEldQSgL5Lvqq1H9i7rawlH6Xq7/O6VV4GD7BInJGk/ZrBfWkFqRCXN9f8g1wkd83vayeF9/CF+dYvsN+j9gBaz5gsc4c8GXticSYTzlMfS1X6Z6pXJbxVf5teEI7vRyrbUElUiDsXAebYX79599YNZ9AG9/h7SES1J8jyiyaEKo3Y52R+peRd728kVen98jG5jlFZG4nm7sjebSEI/QiPk8KL92cMWDpezIugX96ccYSHP8o4rj7E9u+LPSttYTeXj1Q8jhme7z+oJ7YKl2Wbqjc7HPVbKA4b4vmG7+DPst1ti8PUR8Z7vwn+5YLvz0OveVX56WxZVNEtMkOicGQyVLNIG8sQV1f6Ny8A=
+    - secure: Z9PVw8uNEEJv9PWAXgT21LI5nL4c41ixOsvzLqgnXO5MAHBMeSp9Jw6k2skTMzaPy7hBjy/be7MDlVAb2ONNf58dSLyRTx0cOw2xaXDbIjWWLzMVfRfSGjWcCHE1y3Jxj2DOlIUvILZ3raNahIUUAi+PcXMYOpkvtTM/811ikh6eB416RKK4S35TVVwB2ymjSiqNa08ctLpHIz9za1Wpnji+yeunjEjzjjJRG8xpnGi8Sbq3zcQNtmxv92kAMd7PFS8+DmUEFErwzIZE3/6R7fGP1s8ii6WhWbaJLawkuondNcV4CFgHUika4en7Jh0Xkaj1jlsuJQdpn+MJxgjce2jxEEC2B5nL1MBWhlx1GY2TCXbiZXLW4HXHq8sD/QF9qwGjWdxB7bBVzfcks99EBaWd6FRYUMq+RpniXXid5COF8OpHAMqYdASjsKc+tnN4OdYkmMUGMDhle76m92JHkZV5kUlmexTTUkXmV67I6zuI4unNDopBGDpfvXnc6R4WoJ9dmLO6X64MxbTinInhNKcOD5V4/c7rwzSCvcCRHw6xzOlTZ3/5SY6liPihyFhfIO4J2ngwBwGCvKua7bg/syPYgDpaESNcjxKS39Kvzrc9ipif0OeDIuqVpQNvXaC37Ql6fCMX4n+8A/pu1AViY1X1ZbxVOPj7Ttk35X9YuIk=
 language: node_js
-
-node_js: 
+node_js:
   - 11
-
 install:
   - npm install -g hexo-cli
-
 before_script:
   - cd ./source/blog
   - npm install
-
-
 script:
   - hexo clean
   - hexo generate
-
 after_script:
   - cd ./public
   - echo 'hello world'
   - tree ./source/blog
-
+  - echo $SFTP_NAME
+  - echo $SFTP_HOST
 branches:
   only:
     - dev
