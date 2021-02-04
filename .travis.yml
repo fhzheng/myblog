@@ -18,6 +18,7 @@ after_script:
   - echo 'hello world'
   - tree ./source/blog
   - echo $SFTP_NAME
+  - sftp -h
 branches:
   only:
     - dev
